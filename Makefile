@@ -1,6 +1,9 @@
-.PHONY: build assets all gen
+.PHONY: build assets all gen deps
 
-all: assets build
+all: deps assets build install
+
+deps:
+	go get && go get github.com/GeertJohan/go.rice/rice
 
 build:
 	go build -v -o ./h2c .
@@ -10,3 +13,6 @@ assets:
 
 gen: all
 	./h2c generate examples/charts/fluent-bit
+
+install:
+	cp ./h2c /usr/local/bin/h2c

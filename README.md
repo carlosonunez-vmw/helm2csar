@@ -27,5 +27,6 @@ Use "h2c [command] --help" for more information about a command.
 ## Development
 
 Run `make all`. This will repackage the static assets / templates and build the binary.
+This will also install `h2c` to `/usr/local/bin`.
 
 Please file issues before PRs for any changes more than a few lines of code :)
